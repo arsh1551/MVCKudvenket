@@ -1,0 +1,22 @@
+﻿@model MVCKudvenkat.Models.EmployeeViewModel
+@{
+    ViewBag.Title = "Index";
+}
+<div style="font-family:Arial">
+
+    <h2>Index</h2>
+
+  
+    
+    @*using viewbag(not strongly typed)*@
+    @Html.DropDownList("employeeList")
+
+    @*using viewmodel property(strongly typed)*@
+    @Html.DropDownListFor(m => m.employee.EmployeeId, new SelectList(Model.employeeList2, "EmployeeId", "EmployeeName"),"Select Employee")
+    @Html.DropDownListFor(m => m.employee.EmployeeId, Model.employeeList, "Select Employee")
+
+    
+
+    @*@Html.DropDownList("Employees", ViewBag.employeeList, "Select Employee")*@
+</div>
+
